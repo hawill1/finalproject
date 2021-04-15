@@ -1,12 +1,16 @@
 number_files=$(ls . | wc -l)
 
+function win {
+	echo "Congratulations! Your answer is correct :)"
+}
+
 echo "How many files are in your current directory?"
 echo "Type your answer and then press enter:"
 read response
 
 if [[ $response -eq $number_files ]] 
 then 
-	echo "Congratulations! Your answer is correct :)"
+	win
 else
 	while [[ $response -ne $number_files ]]
 	do 
@@ -23,7 +27,7 @@ else
 	done
 	if [[ $response -eq $number_files ]]
 	then
-        	echo "Congratulations! Your answer is correct :)"
+        	win
 	fi
 fi	
  
